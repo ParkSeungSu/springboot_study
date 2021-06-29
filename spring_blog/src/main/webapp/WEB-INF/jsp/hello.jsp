@@ -4,7 +4,7 @@
         <html lang="ko">
 
         <head>
-            <link rel="stylesheet" href="/webjars/bootstrap/5.0.1/css/bootstrap.min.css">
+            <link rel="stylesheet" href="/webjars/origoni-startbootstrap-clean-blog/1.0.3/css/clean-blog.min.css">
             <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
             <title>Hello Park</title>
         </head>
@@ -57,6 +57,6 @@
             </div>
         </body>
         <script src="/webjars/jquery/3.6.0/jquery.min.js"></script>
-        <script src="/webjars/bootstrap/5.0.1/js/bootstrap.min.js"></script>
+        <script src="/webjars/origoni-startbootstrap-clean-blog/1.0.3/js/clean-blog.min.js"></script>
 
         </html>
