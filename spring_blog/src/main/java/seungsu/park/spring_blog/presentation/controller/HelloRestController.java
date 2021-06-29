@@ -21,13 +21,4 @@ public class HelloRestController{
         return helloData;
     }
 
-    @RequestMapping("/list")
-    public List<Hello> list(Model model){
-        List<Hello> helloList = helloDao.findAll();
-        return helloList;
-    }
-    @RequestMapping("/")
-    public String index(){
-        return "Hello world";
-    }
 }
