@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import seungsu.park.spring_blog.domain.model.entity.Post;
 import seungsu.park.spring_blog.infrastructure.dao.PostDao;
@@ -20,7 +21,11 @@ public class PostController {
     @Autowired
     private PostDao postDao;
 
-    @RequestMapping("/write")
+    @RequestMapping(value="/write",method = RequestMethod.GET)
+    public String form(Post post){
+        return "form";
+    }
+    @RequestMapping(value = "/write",method = RequestMethod.POST)
     public String write(Post post){
         post.setRegDate(new Date());
         return "redirect:/post/"+postDao.save(post).getId();
