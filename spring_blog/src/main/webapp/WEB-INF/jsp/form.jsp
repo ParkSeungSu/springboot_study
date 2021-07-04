@@ -1,3 +1,4 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
@@ -22,6 +23,9 @@
   #hinted{color:#1abf89;cursor:pointer;}
   #hinted.disabled{color:#666;}
   #hinted:before{content: '\e816';}
+
+  .errorblock {border: 2px solid red;}
+.error {color: red;}
 </style>
 
 <link rel="stylesheet" href="/webjars/pen/0.2.3/pen.css" />
@@ -68,19 +72,29 @@
         <i class="pen-icon icon-underline" data-action="underline"></i>
         <i class="pen-icon icon-createlink" data-action="createlink"></i>
     </div>
-    <form action="/post/write" onsubmit="$('#content').val($('#pen').html()); pen.destroy();" method="post">
-        <input type="text" name="subject" placeholder="Subject"
+    <form:form action="/post/write" onsubmit="if($('#pen').html()!='<p><br></p>')$('#content').val($('#pen').html()); pen.destroy();" method="post">
+        <form:errors path="*"  cssClass="errorblock" element="div" />
+        <form:input type="text" name="title" path="title" placeholder="Title"
         style="height: 70px;width: 100%;font-size: 55px;
         border: none; border-right: 0px; border-top: 0px; border-left: 0px;border-bottom: 1px;outline-style: none;
-        font-family: Arial, Helvetica, sans-serif;font-weight: 800;">
-        <input type="hidden" name="content" id="content">
+        font-family: Arial, Helvetica, sans-serif;font-weight: 800;"/>
+        <form:errors path="title" cssClass="error" />
+
+        <form:input type="text" name="subtitle" path="subtitle" placeholder="Subtitle"
+        style="height: 50px;width: 100%;font-size: 24px;
+        border: none; border-right: 0px; border-top: 0px; border-left: 0px;border-bottom: 1px;outline-style: none;
+        font-family: Arial, Helvetica, sans-serif;font-weight: 800;"/>
+    
         <hr style="margin-top: 2px;border-top:1px solid #999;">
+
         <div data-toggle="pen" data-placeholder="Content" id="pen" style="min-height: 200px;"></div>
+        <form:input type="hidden" path="content" id="content" />
+        <form:errors path="content" cssClass="error" />
 
         <hr>
 
         <button type="submit" class="btn btn-primary btn-lg btn-block">SAVE</button>
-    </form>
+    </form:form>
 
 	<p class="text-muted">Powered By <a href="http://millky.com">Millky</a> | WYSIWYG Editor by <a href="https://github.com/sofish/pen">Pen Editor</a></p>
     <script src="/webjars/pen/0.2.3/pen.js"></script>

@@ -19,21 +19,45 @@ repositories {
 }
 
 dependencies {
+	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-tomcat
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-tomcat', version: '2.5.2'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+
+	// https://mvnrepository.com/artifact/org.springframework.security/spring-security-oauth2-jose
+	implementation group: 'org.springframework.security', name: 'spring-security-oauth2-jose', version: '5.5.1'
+
+	// https://mvnrepository.com/artifact/org.springframework.security/spring-security-oauth2-client
+	implementation group: 'org.springframework.security', name: 'spring-security-oauth2-client', version: '5.5.1'
+
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
-	implementation 'org.springframework.boot:spring-boot-starter-web'
 	compileOnly 'org.projectlombok:lombok'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	implementation 'com.h2database:h2'
 	annotationProcessor 'org.projectlombok:lombok'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	testImplementation('org.springframework.boot:spring-boot-starter-test')
+	// https://mvnrepository.com/artifact/com.zaxxer/HikariCP
+	implementation group: 'com.zaxxer', name: 'HikariCP', version: '4.0.3'
+
 	// https://mvnrepository.com/artifact/javax.servlet/jstl
 	implementation 'javax.servlet:jstl'
+	// https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api
+	implementation group: 'javax.xml.bind', name: 'jaxb-api', version: '2.4.0-b180830.0359'
+
 	implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
 	implementation 'org.webjars:jquery:3.6.0'
+	implementation 'org.webjars:webjars-locator-core'
 	implementation 'org.webjars:bootstrap:5.0.1'
 	implementation 'org.webjars.bower:origoni-startbootstrap-clean-blog:1.0.3'
 	implementation 'org.webjars.bower:pen:0.2.3'
+	implementation 'org.webjars.bower:font-awesome:4.7.0'
+	implementation 'org.webjars.bower:adminlte:2.3.11'
+	implementation 'org.webjars.bower:jqcloud2:2.0.3'
+	implementation 'org.webjars.bower:momentjs:2.20.1'
+	implementation 'org.webjars.bower:Autolinker.js:1.6.0'
+	implementation 'org.webjars.bower:mustache:2.3.0'
 	implementation 'org.webjars:webjars-locator:0.3'
 
 

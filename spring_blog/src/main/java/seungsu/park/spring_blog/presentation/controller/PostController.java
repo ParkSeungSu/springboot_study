@@ -4,8 +4,11 @@ import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,7 +19,8 @@ import seungsu.park.spring_blog.domain.model.entity.Post;
 import seungsu.park.spring_blog.infrastructure.dao.PostDao;
 
 @Controller
-@RequestMapping("/post")
+@Service
+@RequestMapping("post")
 public class PostController {
     
     @Autowired
@@ -46,5 +50,11 @@ public class PostController {
     public String view(Model model, @PathVariable int id){
         model.addAttribute("post", postDao.findById(id));
         return "post";
+    }
+
+    @RequestMapping("/{id}/delete")
+    public String delete(@PathVariable int id){
+        postDao.delete(id);
+        return "redirect:/post/list";
     }
 }
