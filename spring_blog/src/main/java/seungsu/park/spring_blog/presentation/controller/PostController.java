@@ -19,7 +19,6 @@ import seungsu.park.spring_blog.domain.model.entity.Post;
 import seungsu.park.spring_blog.infrastructure.dao.PostDao;
 
 @Controller
-@Service
 @RequestMapping("post")
 public class PostController {
     
@@ -43,6 +42,7 @@ public class PostController {
     public String list(Model model){
         List<Post> postList = postDao.findAll();
         model.addAttribute("postList", postList);
+        
         return "blog";
     }
 

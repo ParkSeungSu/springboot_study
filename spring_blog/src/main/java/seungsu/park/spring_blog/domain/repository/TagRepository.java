@@ -45,3 +45,4 @@ public class TagRepository {
 		Page<Tag> tags = tagDao.findAll(pageable);
 		return tags;
 	}
+}

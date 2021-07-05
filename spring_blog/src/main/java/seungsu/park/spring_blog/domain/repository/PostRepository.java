@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import lombok.extern.slf4j.Slf4j;
 import seungsu.park.spring_blog.domain.model.UserSession;
+import seungsu.park.spring_blog.domain.model.command.PostCommand;
 import seungsu.park.spring_blog.domain.model.entity.Post;
 import seungsu.park.spring_blog.domain.model.exception.IllegalUserException;
 import seungsu.park.spring_blog.infrastructure.dao.PostDao;
