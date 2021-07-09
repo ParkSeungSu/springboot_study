@@ -16,11 +16,15 @@
 		<!-- 아래의 코드를 추가 합니다.-->
 		<table border="1">
 			<tr>
-				<th>TEXT</th>
+				<th>Id</th>
+				<th>Name</th>
+				<th>Email</th>
 			</tr>
-			<th:block th:each="rl : ${resultList}">
+			<th:block th:each="salary : ${salaryList}">
 				<tr>
-					<td th:text="${ rl }"></td>
+					<td th:text="${salary.id}"></td>
+					<td th:text="${salary.name}"></td>
+					<td th:text="${salary.email}"></td>
 				</tr>
 			</th:block>
 		</table>
